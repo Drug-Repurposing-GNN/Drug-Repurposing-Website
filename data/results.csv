@@ -1,0 +1,14 @@
+"Pre-train 
+Epoch",Split,Model Parameter Size,VGAE,"Indication 
+(AUPRC)","C-Indication 
+(AUPRC)",Comments,,Method
+1,Complex Disease (Zero-shot),2.6M,"Node type
+specific MLP",0.883,0.8,VGAE,,VGAE (Node type specific MLP)
+1,Complex Disease (Zero-shot),2.2M,N/A,0.87,0.796,Weight Decay 1e-4,,Baseline
+1,Complex Disease (Zero-shot),2.2M,N/A,0.743,0.641,"15,000 Psuedo Edges that interfered with Disease 
+pooling mechanism",,15K Psuedo Edges (Baseline)
+1,Complex Disease (Zero-shot),2.2M,N/A,0.733,0.639,"75,000 Psuedo Edges that interfered with Disease 
+pooling mechanism",,75K Psuedo Edges (Baseline)
+,,,,,,,,
+1,Complex Disease (Zero-shot),2.2M,MPNN,0.879,0.783,VGAE,,
+1,Complex Disease (Zero-shot),1.57M,MLP,0.891,0.784,VGAE,,

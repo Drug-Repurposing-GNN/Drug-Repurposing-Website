@@ -1,0 +1,230 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .main-container {
+    /* The image used */
+    background-image: url('Images/Overlay-back.webp');
+    
+    /* Full height */
+    height: 100vh;
+    width: 100vw;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    /* Use for the sliding effect */
+    transition: transform 0.5s ease-in-out;
+  
+    /* Flexbox centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  
+  .button-container {
+    margin-top: 20px; /* Adjusts the space between the text and the buttons */
+  }
+  
+  .text-button {
+    background: none;
+    border: none;
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit; /* Or set a specific color */
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+  
+  .text-button:hover {
+    text-decoration: underline;
+  }
+  
+  .slide-up {
+    transform: translateY(-100vh);
+  }
+
+  
+  .back-button {
+    visibility: hidden; /* Initially not visible */
+    opacity: 0; /* Fully transparent */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: none; /* No background */
+    border: none; /* No border */
+    color: inherit; /* Inherits text color from the body or could be set to a specific color */
+    font-family: 'Trebuchet MS', sans-serif;
+    text-decoration: none; /* No underline by default */
+    z-index: 10; /* Ensure it's above other content */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Transition for opacity and visibility */
+  }
+  
+  .back-button:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  /* Class to be added via JavaScript when we want the button to appear */
+  .back-button-visible {
+    visibility: visible; /* Make the button visible */
+    opacity: 1; /* Fully opaque */
+  }
+
+  .overlay-text {
+    display: none;
+    visibility: hidden; /* Initially not visible */
+    opacity: 0; /* Fully transparent */
+    position: fixed;
+    top: calc(10px + 20px + 48px);
+    left: 0;
+    right: 0; /* Ensure it spans the full width */
+    bottom: 0; /* Ensure it spans the full height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px; /* Adjust padding */
+    font-size: 16px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 9;
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+
+  #overviewBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Images/Overlay-back.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3; /* Adjust this value for the desired opacity */
+    z-index: -1; /* Ensure it's behind the text content */
+  }
+  
+  /* Ensure the content of .overlay-text is on top of the background */
+  .overlay-text > *:not(#overviewBackground) {
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  .overlay-text h2 {
+    text-align: left; /* Keep headings aligned to the left */
+    margin-left: 100px; /* Add some margin to align with the 'Back' button */
+  }
+  
+  .overlay-text p {
+    text-align: justify; /* Justify paragraphs for better readability, or use 'center' if preferred */
+    margin: 0 auto; /* Center the paragraph within the container */
+    width: 70%; 
+    margin-bottom: 1em;
+  }
+  
+  /* Class to be added via JavaScript when we want the text to appear */
+  .overlay-text-visible {
+    visibility: visible; /* Make the text visible */
+    opacity: 1; /* Fully opaque */
+  }
+
+  .method-text {
+    display: none;
+    visibility: hidden; /* Initially not visible */
+    opacity: 0; /* Fully transparent */
+    position: fixed;
+    top: calc(10px + 20px + 48px);
+    left: 0;
+    right: 0; /* Ensure it spans the full width */
+    bottom: 0; /* Ensure it spans the full height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px; /* Adjust padding */
+    font-size: 16px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 9;
+    font-family: 'Trebuchet MS', sans-serif;
+    
+  }
+  #methodsBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Images/Overlay-back.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3; /* Adjust this value for the desired opacity */
+    z-index: -1; /* Ensure it's behind the text content */
+  }
+
+  
+  /* Ensure the content of .overlay-text is on top of the background */
+  .method-text > *:not(#methodsBackground) {
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  .method-text h2 {
+    text-align: left; /* Keep headings aligned to the left */
+    margin-left: 100px; /* Add some margin to align with the 'Back' button */
+  }
+  
+  .method-text p {
+    text-align: justify; /* Justify paragraphs for better readability, or use 'center' if preferred */
+    margin: 0 auto; /* Center the paragraph within the container */
+    width: 70%; 
+    margin-bottom: 1em;
+  }
+  
+  /* Class to be added via JavaScript when we want the text to appear */
+  .method-text-visible {
+    visibility: visible; /* Make the text visible */
+    opacity: 1; /* Fully opaque */
+  }
+
+  .section-nav-button {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-family: 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    z-index: 10; /* Ensure it's above other content */
+    transition: text-decoration 0.3s ease;
+}
+
+#toMethodsButton {
+    right: 20px; /* This will position the button on the bottom right */
+}
+
+#toOverviewButton {
+    left: 20px; /* This will position the button on the bottom left */
+}
+
+.section-nav-button:hover {
+    text-decoration: underline;
+}
