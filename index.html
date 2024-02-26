@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello</title>
+    <title>Noisy-Student 4 Graphs</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/Images/pill.svg">
     <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -69,11 +71,26 @@
     </div>
     <div class="main-container bg-image">
         <div class="centered-container">
-            <h1>Welcome</h1>
+            <div id="title-div">
+                <h1 id="title">Noisy-Student 4 Graphs</h1> <h1>Knowledge Distillation to Enhance the Performance of Drug-Disease Link Prediction on Precision Medicine Knowledge Graph</h1>
+            </div>
+            <div id="abstract-div">
+                <h2 id="abs-title">Abstract</h2>
+                <a id="abstract">Knowledge Distillation aims to transfer the teacher model’s knowledge
+                    to the smaller student model in order to improve the efficiency of the model,
+                    making it faster and more deployable. However, Noisy-Student showed that
+                    it is also possible for Knowledge Distillation to produce a bigger student model
+                    who outperforms the teacher model. Through the lens of a biomedical Knowl-
+                    edge Graph called Precision Medicine Knowledge Graph (PrimeKG), we
+                    want to show that it is also indeed possible to mimic the noisy-student phe-
+                    nomenon in the field of Graph Neural Networks. In this paper, we perform a
+                    thorough investigation in how the Noisy-Student can be tweaked in order to
+                    be applicable and successful for Graph Neural Networks.</a>
+            </div>
             <div class="button-container">
                 <button class="text-button" onclick="slideUp('overviewText', 'overlay-text')">Overview</button>
                 <button class="text-button" onclick="slideUp('methodsText', 'method-text')">Methods</button>
-                <a href="https://github.com/Drug-Repurposing-GNN/SSL-DiseaseDrug-Prediction" class="text-button" target="_blank">Code</a>
+                <button href="https://github.com/Drug-Repurposing-GNN/SSL-DiseaseDrug-Prediction" class="text-button" onclick="window.open('https://github.com/Drug-Repurposing-GNN/SSL-DiseaseDrug-Prediction')">Code</button>
             </div>
         </div>
     </div>
