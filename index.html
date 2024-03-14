@@ -14,25 +14,28 @@
     <div id="overviewText" class="overlay-text">
         <div id="overviewBackground"></div>
         <h2>Overview:</h2>
-        <p> We propose FlyKD, novel scalable way to compress large Graph Neural Networks
+        <p> We propose FlyKD, novel, scalable way to compress large Graph Neural Networks
             (GNN) to lighter, deployable GNNs. Specifically, FlyKD is a variation of Knowledge
             Distillation (KD) method where a larger, more capable teacher model generates
             pseudo labels for the student model to learn from. 
 
-            FlyKD has two novel components in addition to original KD to address two problems
-            in Knowledge Distillation. The first problem FlyKD addresses is memory isssue of 
-            GNNs. When you generate many pseudo labels using the teacher model or GNN especially,
-            users will often run into cuda Out of Memory (OOM) issue due to too many intermediate
-            values to store in order to perform backpropagation with student model. 
-            
-            Knowledge Distillation (KD) with Curriculum Learning,
-            particularly designed for link prediction within graphs like PrimeKG.
-            By integrating KD with Curriculum Learning in Graph Neural Networks (GNNs), 
-            FlyKD enables teacher model . 
-            This approach not only leverages the foundation laid by previous GNN and KD methodologies 
-            but also introduces novel computational strategies to address the challenges of model optimization over noisy pseudo labels. 
-            The synergy between these technologies promises to revolutionize the analysis of complex biomedical data, 
-            facilitating significant strides in precision medicine and drug repurposing.
+            FlyKD has two novel components in addition to the original KD to address two problems
+            in Knowledge Distillation in Graphs. The first problem FlyKD addresses is memory isssue of 
+            GNNs. When you generate many pseudo labels using the GNNs, users will often run into cuda 
+            Out of Memory (OOM) issue when performing backpropagation with the student model. However,
+            by generating unseen pseudo labels on the fly at every epoch, one can generate virtually
+            infinite amount of pseudo labels for student model to learn from. 
+
+            But this poses another problem, pseudo labels are inherently noisy and difficult to optimize.
+            Generating immense amount of pseudo labels worsens this problem. In order to alleviate this,
+            FlyKD incorporates a form of Curriculum Learning. Inspired by how humans learn, Curriculum 
+            Learning helps the optimization process of the model by introduced data at an increasing
+            complexity. To incoporate Curriculum Learning, we used our prior knowledge of noisiness
+            of each type of labels and gradually introduced them in the order of noisiness. 
+
+            We see that by incorporating these two novel components, FlyKD shows state-of-the-art
+            performance compare to other GNN KD methods out there including the basic KD (proposed by
+            Geoff Hinton et. al.) and Local Structure Preserving GCN (LSPGCN, Yang et. al.).
         </p>
         <p>
             This advancement promises to accelerate research in precision medicine and drug repurposing, 
