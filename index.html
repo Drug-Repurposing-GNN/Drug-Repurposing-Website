@@ -14,10 +14,21 @@
     <div id="overviewText" class="overlay-text">
         <div id="overviewBackground"></div>
         <h2>Overview:</h2>
-        <p> We propose FlyKD, novel scalable Knowledge Distillation with Curriculum Learning,
-            particularly designed for link prediction within graphs like PrimeKG. 
-            By innovatively integrating Knowledge Distillation (KD) with Curriculum Learning in Graph Neural Networks (GNNs), 
-            FlyKD aims to set new benchmarks in predictive modeling accuracy and efficiency. 
+        <p> We propose FlyKD, novel scalable way to compress large Graph Neural Networks
+            (GNN) to lighter, deployable GNNs. Specifically, FlyKD is a variation of Knowledge
+            Distillation (KD) method where a larger, more capable teacher model generates
+            pseudo labels for the student model to learn from. 
+
+            FlyKD has two novel components in addition to original KD to address two problems
+            in Knowledge Distillation. The first problem FlyKD addresses is memory isssue of 
+            GNNs. When you generate many pseudo labels using the teacher model or GNN especially,
+            users will often run into cuda Out of Memory (OOM) issue due to too many intermediate
+            values to store in order to perform backpropagation with student model. 
+            
+            Knowledge Distillation (KD) with Curriculum Learning,
+            particularly designed for link prediction within graphs like PrimeKG.
+            By integrating KD with Curriculum Learning in Graph Neural Networks (GNNs), 
+            FlyKD enables teacher model . 
             This approach not only leverages the foundation laid by previous GNN and KD methodologies 
             but also introduces novel computational strategies to address the challenges of model optimization over noisy pseudo labels. 
             The synergy between these technologies promises to revolutionize the analysis of complex biomedical data, 
