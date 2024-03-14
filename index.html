@@ -26,15 +26,17 @@
             Out of Memory (OOM) issue when performing backpropagation with the student model. However,
             by generating unseen pseudo labels on the fly at every epoch, one can generate virtually
             infinite amount of pseudo labels for student model to learn from. 
-        </p>
-        <h2>PrimeKG:</h2>
-        <p> 
+
             But this poses another problem, pseudo labels are inherently noisy and difficult to optimize.
             Generating immense amount of pseudo labels worsens this problem. In order to alleviate this,
             FlyKD incorporates a form of Curriculum Learning. Inspired by how humans learn, Curriculum 
             Learning helps the optimization process of the model by introduced data at an increasing
             complexity. To incoporate Curriculum Learning, we used our prior knowledge of noisiness
             of each type of labels and gradually introduced them in the order of noisiness. 
+        </p>
+        <h2>PrimeKG:</h2>
+        <p> 
+
         </p>
         <button class="section-nav-button" id="toMethodsButton" onclick="switchSection('methodsText', 'method-text')">Methods &gt;</button>
 
