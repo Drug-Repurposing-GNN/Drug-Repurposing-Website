@@ -18,47 +18,30 @@
             (GNN) to lighter, deployable GNNs. Specifically, FlyKD is a variation of Knowledge
             Distillation (KD) method where a larger, more capable teacher model generates
             pseudo labels for the student model to learn from. 
-
+        </p>
+        <p>
             FlyKD has two novel components in addition to the original KD to address two problems
             in Knowledge Distillation in Graphs. The first problem FlyKD addresses is memory isssue of 
             GNNs. When you generate many pseudo labels using the GNNs, users will often run into cuda 
             Out of Memory (OOM) issue when performing backpropagation with the student model. However,
             by generating unseen pseudo labels on the fly at every epoch, one can generate virtually
             infinite amount of pseudo labels for student model to learn from. 
-
+        </p>
+        <h2>PrimeKG:</h2>
+        <p> 
             But this poses another problem, pseudo labels are inherently noisy and difficult to optimize.
             Generating immense amount of pseudo labels worsens this problem. In order to alleviate this,
             FlyKD incorporates a form of Curriculum Learning. Inspired by how humans learn, Curriculum 
             Learning helps the optimization process of the model by introduced data at an increasing
             complexity. To incoporate Curriculum Learning, we used our prior knowledge of noisiness
             of each type of labels and gradually introduced them in the order of noisiness. 
-
-            We see that by incorporating these two novel components, FlyKD shows state-of-the-art
-            performance compare to other GNN KD methods out there including the basic KD (proposed by
-            Geoff Hinton et. al.) and Local Structure Preserving GCN (LSPGCN, Yang et. al.).
-        </p>
-        <p>
-            This advancement promises to accelerate research in precision medicine and drug repurposing, 
-            leveraging the strengths of TxGNN as a base while introducing novel computational strategies. 
-            The collaboration of these technologies is set to transform the analysis of complex biomedical data, 
-            facilitating a deeper understanding of disease mechanisms and broadening the horizons for therapeutic discovery.
-        </p>
-        <h2>PrimeKG:</h2>
-        <p> 
-            PrimeKG is a sophisticated biomedical knowledge graph that serves as a critical foundation for this project, 
-            integrating an extensive range of biomedical data. It encompasses genomic information, protein interactions, 
-            chemical properties, and disease associations, providing a comprehensive framework for advanced research in drug discovery 
-            and precision medicine. By leveraging PrimeKG, the project taps into a rich resource of interconnected data, 
-            enabling the exploration of complex biological relationships and facilitating the development of innovative 
-            approaches to predictive modeling in the biomedical field.
         </p>
         
         <h2>TxGNN:</h2>
-        <p> TxGNN, pivotal in our project, harnesses Graph Neural Networks to delve into PrimeKG's rich biomedical data, 
-            aiming for breakthroughs in drug-disease link prediction. Its architecture is strategically designed to uncover 
-            new drug applications and elucidate disease pathways, marking a significant leap toward advancing precision medicine. 
-            This model not only propels our understanding of complex biological interactions 
-            but also sets the stage for innovative drug discovery and repurposing initiatives.
+        <p> 
+            We see that by incorporating these two novel components, FlyKD shows state-of-the-art
+            performance compare to other GNN KD methods out there including the basic KD (proposed by
+            Geoff Hinton et. al.) and Local Structure Preserving GCN (LSPGCN, Yang et. al.).
         </p>
         <h2>Knowledge Distillation and FlyKD:</h2>
         <p> 
