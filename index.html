@@ -22,27 +22,28 @@
         <p>
             FlyKD has two novel components in addition to the original KD to address two problems
             in Knowledge Distillation in Graphs. The first problem FlyKD addresses is memory isssue of 
-            GNNs. When you generate many pseudo labels using the GNNs, users will often run into cuda 
-            Out of Memory (OOM) issue when performing backpropagation with the student model. However,
-            by generating unseen pseudo labels on the fly at every epoch, one can generate virtually
-            infinite amount of pseudo labels for student model to learn from. 
+            GNNs. When you generate many pseudo labels using GNNs, users will often run into cuda 
+            Out of Memory (OOM) issue as the student model backpropagates. However,
+            by generating unseen pseudo labels on the fly with randomness at every epoch, one can generate
+            virtually infinite amount of pseudo labels for the student model to learn from. 
 
-            But this poses another problem, pseudo labels are inherently noisy and difficult to optimize.
+            But this poses another problem: pseudo labels are inherently noisy and difficult to optimize.
             Generating immense amount of pseudo labels worsens this problem. In order to alleviate this,
             FlyKD incorporates a form of Curriculum Learning. Inspired by how humans learn, Curriculum 
-            Learning helps the optimization process of the model by introduced data at an increasing
+            Learning helps the optimization process of the model by introducing data at an increasing
             complexity. To incoporate Curriculum Learning, we used our prior knowledge of noisiness
             of each type of labels and gradually introduced them in the order of noisiness. 
         </p>
         <h2>PrimeKG:</h2>
         <p> 
-            Our dataset composes of the latest biomedical Knowledge Graph called Precision Medicine
-            Knowledge Graph (fill), combined by 20+ famous databases such as DrugBank, DrugCentral, 
-            DisGeNet, etc. PrimeKG is specially designed for therepeutic repurposing of drugs and can 
-            be used to find new treatments to diseases that currently have no treatment. 
+            Our dataset composes the latest biomedical Knowledge Graph called Precision Medicine
+            Knowledge Graph (Chandak, Huang and Zitnik (2023)), combining 20+ famous databases such 
+            as DrugBank, DrugCentral, DisGeNet, etc. PrimeKG is specially designed for therepeutic 
+            repurposing of drugs and can be used to find new treatments to diseases that currently 
+            have no treatment. 
 
-            PrimeKG has over 4 million relations and the structure of it can be illustrated below
-            (adapted from (fill)):
+            PrimeKG has over 4 million relations and the scheme of the Knowledge Graph can be illustrated 
+            below (adapted from Chandak, Huang and Zitnik (2023)):
             <img src="Images/schematic.png">
         </p>
         <button class="section-nav-button" id="toMethodsButton" onclick="switchSection('methodsText', 'method-text')">Methods &gt;</button>
