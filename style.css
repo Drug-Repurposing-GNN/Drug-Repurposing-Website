@@ -325,3 +325,15 @@ body, html {
 .section-nav-button:hover {
     text-decoration: underline;
 }
+
+#myDiv {
+  width: 30%;
+  margin-left: 350px;/* Optional: to center the div if that's desired */
+}
+
+#myDiv2 {
+  width: 30%;
+  margin-left: 350px;/* Optional: to center the div if that's desired */
+} 
+
+
