@@ -1,1 +1,1 @@
-Website link: https://drug-repurposing-gnn.github.io/Drug-Repurposing-Website/
+Website: https://drug-repurposing-gnn.github.io/Drug-Repurposing-Website/
