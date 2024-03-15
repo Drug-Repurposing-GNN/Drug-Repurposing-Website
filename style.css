@@ -55,7 +55,7 @@ body, html {
   }
   
   .centered-container {
-    width: 75%;
+    width: 50%;
     padding: 10px;
     background-color: rgba(163, 194, 212, 0.8);
     /* padding: 30px; */
@@ -79,7 +79,7 @@ img {
     width: auto; 
 }
 
-@media {
+@media (max-width: 768px) {
   .centered-container {
     min-height: 50%; /* Adjust this value as needed for mobile devices */
   }
