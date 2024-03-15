@@ -1,4 +1,4 @@
-/* p {
+p {
     font-size: 34px; 
 }
 button {
@@ -8,9 +8,9 @@ button {
 
 li {
     font-size:34x
-} */
+}
 
-p {
+/* p {
     font-size: 3vw; 
 }
 
@@ -21,7 +21,7 @@ button {
 
 li {
     font-size: 3vw; 
-}
+} */
 
 body, html {
     height: 100%;
