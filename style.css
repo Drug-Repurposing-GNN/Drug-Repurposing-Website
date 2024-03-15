@@ -6,10 +6,15 @@ button {
     padding: 10px 20px; /* Adds space inside the button around the text */
 }
 
+li {
+    font-size:34x
+}
+
 body, html {
     height: 100%;
     margin: 0;
   }
+
   
   .main-container {
     /* The image used */
