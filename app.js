@@ -141,8 +141,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var data = [trace1];
     var layout = {
-        width: 70, // or any other size
-        height: 40, // or any other size
         barmode: 'group',
         plot_bgcolor: 'rgba(0,0,0,0)', 
         paper_bgcolor: 'rgba(0,0,0,0)',
