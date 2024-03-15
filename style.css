@@ -74,7 +74,7 @@ body, html {
     /* margin: 50px; */
   }
 
-@media (max-width: 768px) {
+@media () {
     .centered-container {
         min-height: 5%;
         /* Additional styles to decrease size, like reducing font-size, margins, etc. */
