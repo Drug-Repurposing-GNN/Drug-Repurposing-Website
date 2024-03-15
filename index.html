@@ -68,24 +68,131 @@
 
         <h2>Resutls:</h2>
         
-        <!-- <canvas id="resultsChart"></canvas> -->
-        <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+        <table style="width:100%; text-align: center; border-collapse: collapse; border: 1px solid black; margin-bottom: 20px;">
+            <caption style="text-align: center; font-weight: bold; margin-bottom: 0.5em;">
+                Baseline AUPRC (%):
+            </caption>
+            <tr>
+                <th style="border: 1px solid black;">Model</th>
+                <th style="border: 1px solid black;">Num. Params</th>
+                <th style="border: 1px solid black;">Seed 45</th>
+                <th style="border: 1px solid black;">Seed 46</th>
+                <th style="border: 1px solid black;">Seed 47</th>
+                <th style="border: 1px solid black;">Seed 48</th>
+                <th style="border: 1px solid black;">Seed 49</th>
+                <th style="border: 1px solid black;">Mean ± std</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;">Baseline 130</td>
+                <td style="border: 1px solid black;">(1.7M)</td>
+                <td style="border: 1px solid black;">80.33</td>
+                <td style="border: 1px solid black;">73.66</td>
+                <td style="border: 1px solid black;">76.29</td>
+                <td style="border: 1px solid black;">84.19</td>
+                <td style="border: 1px solid black;">79.91</td>
+                <td style="border: 1px solid black;">78.87 ± 4.04</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;">Baseline 80</td>
+                <td style="border: 1px solid black;">(650k)</td>
+                <td style="border: 1px solid black;">78.64</td>
+                <td style="border: 1px solid black;">71.97</td>
+                <td style="border: 1px solid black;">74.44</td>
+                <td style="border: 1px solid black;">82.74</td>
+                <td style="border: 1px solid black;">77.87</td>
+                <td style="border: 1px solid black;">77.13 ± 4.13</td>
+            </tr>
+        </table>
+        <p>
+            The zero-shot evaluation setting can lead to high variability due to different seeds. 
+            To address this, we focus on the performance gains from each method relative to the baseline, averaged across seeds. 
+            This way, we can more accurately attribute changes in performance to the methods themselves, 
+            rather than to fluctuations in task difficulty associated with different seeds.
+        </p>
+        
+        <table style="width:75%; margin: auto; border-collapse: collapse; border: 1px solid black; margin-bottom: 20px;">
+            <caption style="text-align: center; font-weight: bold; margin-bottom: 0.5em;">
+                Knowledge Distillation Methods (Relative gains from Baseline80)
+            </caption>
+            <tr>
+                <th style="border: 1px solid black;">Model</th>
+                <th style="border: 1px solid black;">Time</th>
+                <th style="border: 1px solid black;">Curriculum Learning</th>
+                <th style="border: 1px solid black;">Mean±std</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;">Basic KD</td>
+                <td style="border: 1px solid black;">1600</td>
+                <td style="border: 1px solid black;">No</td>
+                <td style="border: 1px solid black;">-0.62±0.59</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;">LSP 1 layer (RBF)</td>
+                <td style="border: 1px solid black;">20000</td>
+                <td style="border: 1px solid black;">No</td>
+                <td style="border: 1px solid black;">-1.09±0.23</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;">LSP 2 layers (RBF)</td>
+                <td style="border: 1px solid black;">40000</td>
+                <td style="border: 1px solid black;">No</td>
+                <td style="border: 1px solid black;">-1.41±0.82</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;">FlyKD</td>
+                <td style="border: 1px solid black;">2000</td>
+                <td style="border: 1px solid black;">Yes</td>
+                <td style="border: 1px solid black;">1.16±0.36</td>
+            </tr>
+        </table>
         <p>
             In our study, we delve into three distinct methods of Knowledge Distillation (KD) for Graph Neural Networks (GNN): 
             Basic Knowledge Distillation (BKD) as introduced by Hinton, Vinyals, and Dean in 2015, 
             Local Structure Preserving GCN (LSPGCN, also known as DistillGCN) developed by Yang et al. in 2020, 
             and our innovative approach, FlyKD. Our analysis reveals that while BKD and LSPGCN unfortunately result in diminished KD effects, 
-            FlyKD stands out by achieving positive advancements beyond the foundational model, which did not incorporate KD techniques, 
-            starting from a baseline of 80.
+            FlyKD stands out by achieving positive results compared. However, Curriculum learning was used in FlyKD, whereas it was not used
+            in the other methods.
         </p>
 
-        <div id='myDiv2'><!-- Plotly chart will be drawn inside this DIV --></div>
-
+        <!-- <div id='myDiv2'></div> -->
+        <table style="width:75%; margin-left: auto; margin-right: auto; border-collapse: collapse; border: 1px solid black; margin-bottom: 20px;">
+            <caption style="text-align: center; font-weight: bold; margin-bottom: 0.5em;">
+                Ablation study (Relative gains from Baseline80)
+            </caption>
+            <tr>
+                <th style="border: 1px solid black;">Model</th>
+                <th style="border: 1px solid black;">Configuration</th>
+                <th style="border: 1px solid black;">Mean±std</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;">Basic KD</td>
+                <td style="border: 1px solid black;">Employ Curriculum Learning</td>
+                <td style="border: 1px solid black;">0.93±0.45</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;">FlyKD</td>
+                <td style="border: 1px solid black;">Fix Random Graph</td>
+                <td style="border: 1px solid black;">1.14±0.39</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;">FlyKD</td>
+                <td style="border: 1px solid black;">No Curriculum Learning</td>
+                <td style="border: 1px solid black;">0.19±0.42</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;">FlyKD</td>
+                <td style="border: 1px solid black;">Take Out Pseudo Labels on Train Dataset</td>
+                <td style="border: 1px solid black;">-0.68±0.63</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black;">FlyKD</td>
+                <td style="border: 1px solid black;">stepwise function for Curriculum Learning</td>
+                <td style="border: 1px solid black;">-1.436±0.86</td>
+            </tr>
+        </table>
         <p>
-            Through a comprehensive ablation study, we uncover that the disparity between FlyKD's performance 
-            and that of other KD strategies can be attributed to the influence of noise in the pseudo labels generated by the teacher model. 
-            Remarkably, when we integrate Curriculum Learning into the BKD framework, we witness a significant enhancement in its efficacy, 
-            with a performance increase of +1.55% compared to its implementation without Curriculum Learning.
+            Our ablation study shows that noise in the teacher model's pseudo labels causes the performance gap between FlyKD and other KD methods. 
+            Adding Curriculum Learning to BKD improves its performance noticeably, giving a +1.55% boost over the standard approach.
         </p>
         <button class="section-nav-button" id="toOverviewButton" onclick="switchSection('overviewText', 'overlay-text')">&lt; Overview</button>
     </div>
