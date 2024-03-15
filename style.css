@@ -1,3 +1,6 @@
+p {
+    font-size: 18px; /* This sets the font size of all <p> elements to 18px. Adjust the size as needed. */
+}
 
 body, html {
     height: 100%;
