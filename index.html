@@ -56,11 +56,11 @@
     <div id="methodsText" class="method-text">
         <div id="methodsBackground"></div>
         <h2>Methods:</h2>
-        <p> FlyKD first trains a teacher TxGNN, zero-shot Relation GCN (R-GCN) developed by (Chandak, Huang and Zitnik
+        <p> FlyKD first trains a teacher TxGNN, zero-shot Relational GCN (R-GCN) developed by (Chandak, Huang and Zitnik
 (2023)), 
             to predict the existence of indication and contraindication relations between drugs and diseases. With
             pre-trained teacher TxGNN, we obtain the final node embeddings of the original graph then use the final node embeddings
-            with a scoring function called DisMult to generate three types of labels: Original Label, Pseudo label on Training graph,
+            with a scoring function called DistMult to generate three types of labels: Original Label, Pseudo label on Training graph,
             and Pseudo label on Degree-aware Random Graph. These three types of labels are illustrated below and ordered by the 
             level of noisiness. </p>
         <img src="Images/Labels.png" alt="Model Architecture" style="width: 40%; height: auto;">
@@ -140,7 +140,7 @@
             </table>
             <p>
                 There is a high variance of performance due to zero-shot
-                evaluation setting. Thus, we focus on the relative performance gains at each seed and averaged across seeds. 
+                evaluation setting. Thus, we focus on the relative performance gains at each seed and average across seeds. 
                 This way, we can more accurately attribute changes in performance to the methods themselves, 
                 rather than to fluctuations in task difficulty associated with different seeds.
             </p>
@@ -188,8 +188,8 @@
             </table>
     
             <p>
-                Our experiments reveals that while BKD and LSPGCN result in negative KD effects, 
-                FlyKD stands out by achieving positive relative gains. We ind out the reason for such gap in the following
+                Our experiments reveal that while BKD and LSPGCN result in negative KD effects, 
+                FlyKD stands out by achieving positive relative gains. We find out the reason for such gap in the following
                 ablation study.
             </p>
             
@@ -240,9 +240,6 @@
     </div>
     <div id="findingsText" class="method-text">
         <div id="methodsBackground"></div>
-        <p>
-            "Findings and Summary Section?"
-        </p>
         <h2>Findings</h2>
         <ul>
             <li>Optimization process of the student model in KD is inherently noisy, and Curriculum Learning can greatly alleviate this issue.</li>
@@ -252,7 +249,7 @@
         </ul>
         <p>
             Last Remark:
-            We believe our experimental results suggests a new research direction of how to improve the
+            We believe our experimental results suggest a new research direction of how to improve the
             optimization process of the student model rather than the common what pseudo labels to
             generate (What to distill).
         </p>
