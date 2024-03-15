@@ -94,7 +94,8 @@ body, html {
 }
 
   .button-container {
-    position: relative; /* Make this a positioned container */
+    display: flex;
+    justify-content: space-between; /* This will push the children to opposite ends */
     margin-top: 10px; /* Adjusts the space between the text and the buttons */
     border-radius: 10px;
     /* opacity: 0.8; */
