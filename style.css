@@ -80,18 +80,9 @@ img {
 }
 
 /* @media (max-width: 768px) {
-  .centered-container {
-    min-height: 50%; /* Adjust this value as needed for mobile devices */
-  }
-/*     .centered-container {
-        min-height: 50%;
-    }
-    #title-div h1 {
-        font-size: 76px;
-    }
-    .button-container {
-        font-size: 56px;
-  } */
+      .centered-container {
+        min-height: 50%; 
+      }
     img {
         max-width: 100%; 
         width: auto; 
