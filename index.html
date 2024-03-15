@@ -56,18 +56,41 @@
     <div id="methodsText" class="method-text">
         <div id="methodsBackground"></div>
         <h2>Methods:</h2>
-        <p> FlyKD first begins by training a teacher TxGNN, novel Relation GCN (R-GCN) developed by (fill), 
-            to predict existence of indication and contraindication between drugs and diseases. Then we generate
-            three types of pseudo labels: Original Label, Pseudo label on Training graph, and Pseudo label on Degree-aware
-            Random Graph. These three types of labels are illustrated below categorized by the level of noisiness. </p>
+        <p> FlyKD first begins by training a teacher TxGNN, zero-shot Relation GCN (R-GCN) developed by (fill), 
+            to predict the existence of indication and contraindication relations between drugs and diseases. With
+            pre-trained teacher TxGNN, we obtain the final node embeddings of the original graph then use the final node embeddings
+            with a scoring function called DisMult to generate three types of labels: Original Label, Pseudo label on Training graph,
+            and Pseudo label on Degree-aware Random Graph. These three types of labels are illustrated below and ordered by the 
+            level of noisiness. </p>
         <img src="Images/Labels.png" alt="Model Architecture" style="width: 40%; height: auto;">
-        <p> Simultaneously, we introduce FlyKD, a novel framework that produces a vast number of pseudo labels on-the-fly, 
-            overcoming traditional memory constraints. It utilizes Curriculum Learning to manage the pseudo labels' inherent noisiness effectively. 
-            FlyKD creates random graphs each epoch, applying the DistMult scoring function to foster the student model's global imitation 
-            of the teacher model. This iterative process, enriched with a linear loss scheduler, 
-            optimizes the model's exposure to progressively complex labels, setting new standards in graph-based predictive modeling. </p>
+        <p>
+            The recipe for generating Degree-Aware Random Graph is depicted below: 
+            
+            "insert Algorithm 2"
+                
+            In plain words, GenerateRandomGraph selects two nodes where the probability of a
+            node being selected is proportionate to the degree of a node in the original graph (with
+            respect to the relation). By doing so, we increase the quality of the pseudo labels on the
+            random graph by utilizing the prior information that nodes that have seen more labels
+            during training are more likely to have a higher embedding quality. Once two nodes are
+            selected, a link is formed between them. This process of generating pseudo links is repeated
+            k times.
+        </p>
+        <p>
+            The above generation of random graph per epoch conceptually enables the teacher model to generate
+            unlimited number of pseudo labels that can be backpropgated by the student model. 
+        </p>
+        <p>
+            As mentioned earlier, pseudo labels are inherently noisy and pseudo labels on random graphs are 
+            even more noisy. Thus, we incorporate a form of Curriculum Learning by utilizing a loss weight scheduler,
+            which gradually shifts the emphasis from easy original label to medium pseudo label on train graph and
+            ultimately hard pseudo label on the random graph. The loss weight scheduler is depicted below:
+            "insert loss weight scheduler"
 
-        <h2>Resutls:</h2>
+            "Separate Results to a different page?"
+        </p>
+
+        <h2>Results:</h2>
         
         <table style="width:75%; margin: auto; border-collapse: collapse; border: 1px solid black; margin-bottom: 20px;">
             <caption style="text-align: center; font-weight: bold; margin-bottom: 0.5em;">
