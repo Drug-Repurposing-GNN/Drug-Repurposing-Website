@@ -80,6 +80,9 @@ img {
 }
 
 @media {
+  .centered-container {
+    min-height: 50%; /* Adjust this value as needed for mobile devices */
+  }
 /*     .centered-container {
         min-height: 50%;
     }
