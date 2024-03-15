@@ -79,8 +79,8 @@ img {
     width: auto; 
 }
 
-/* @media (max-width: 768px) {
-      .centered-container {
+@media {
+    .centered-container {
         min-height: 50%; 
       }
     img {
@@ -88,7 +88,7 @@ img {
         width: auto; 
     }
 }
- */
+
 
   .button-container {
     margin-top: 10px; /* Adjusts the space between the text and the buttons */
