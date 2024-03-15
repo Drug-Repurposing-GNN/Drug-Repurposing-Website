@@ -26,7 +26,8 @@
             Out of Memory (OOM) issue as the student model backpropagates. However,
             by generating unseen pseudo labels on the fly with randomness at every epoch, one can generate
             virtually infinite amount of pseudo labels for the student model to learn from. 
-
+        </p>
+        <p>
             But this poses another problem: pseudo labels are inherently noisy and difficult to optimize.
             Generating immense amount of pseudo labels worsens this problem. In order to alleviate this,
             FlyKD incorporates a form of Curriculum Learning. Inspired by how humans learn, Curriculum 
