@@ -79,7 +79,7 @@ img {
     width: auto; 
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .centered-container {
     min-height: 50%; /* Adjust this value as needed for mobile devices */
   }
@@ -97,7 +97,7 @@ img {
         width: auto; 
     }
 }
-
+ */
 
   .button-container {
     margin-top: 10px; /* Adjusts the space between the text and the buttons */
