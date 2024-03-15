@@ -47,7 +47,7 @@
             Furthermore, PrimeKG has over 4 million relations and the scheme of the Knowledge Graph can be illustrated 
             below (adapted from Chandak, Huang and Zitnik (2023)):
             <div style="text-align: center;">
-                <img src="Images/schematic-nobg.png" style="width: 40%; height: auto;">
+                <img src="Images/schematic-nobg.png" height: auto;">
             </div>
         </p>
         <div class="nav-button-container ">
@@ -64,12 +64,12 @@
             with a scoring function called DistMult to generate three types of labels: Original Label, Pseudo label on Training graph,
             and Pseudo label on Degree-aware Random Graph. These three types of labels are illustrated below and ordered by the 
             level of noisiness. </p>
-        <img src="Images/Labels.png" alt="Model Architecture" style="width: 40%; height: auto;">
+        <img src="Images/Labels.png" alt="Model Architecture" height: auto;">
         <p>
             The recipe for generating Degree-Aware Random Graph is depicted below: 
         </p>
 
-        <img src="Images/Algo.png" style="width: 40%; height: auto;">
+        <img src="Images/Algo.png" height: auto;">
         <p>
             In plain words, GenerateRandomGraph selects two nodes where the probability of a
             node being selected is proportionate to the degree of a node in the original graph (with
@@ -90,7 +90,7 @@
             ultimately hard pseudo label on the random graph. The loss scheduler is depicted below:
         </p>
         
-        <img src="Images/scheduler.png" style="width: 40%; height: auto;">
+        <img src="Images/scheduler.png" height: auto;">
         <br>
         <div class="nav-button-container ">
         <button class="section-nav-button" id="toOverviewButton" onclick="switchSection('overviewText', 'overlay-text')">&lt; Overview</button>
