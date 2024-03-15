@@ -1,6 +1,10 @@
 p {
     font-size: 34px; /* This sets the font size of all <p> elements to 18px. Adjust the size as needed. */
 }
+button {
+    font-size: 34px; /* Increases the text size inside the button */
+    padding: 10px 20px; /* Adds space inside the button around the text */
+}
 
 body, html {
     height: 100%;
