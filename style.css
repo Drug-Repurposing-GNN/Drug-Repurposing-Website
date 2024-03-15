@@ -74,10 +74,9 @@ body, html {
     /* margin: 50px; */
   }
 
-@media () {
+/* @media () {
     .centered-container {
         min-height: 5%;
-        /* Additional styles to decrease size, like reducing font-size, margins, etc. */
     }
     #title-div h1 {
         font-size: 76px;
@@ -85,13 +84,7 @@ body, html {
     .button-container {
         font-size: 56px;
   }
-    
-    
-/*     .button-container button {
-        padding: 10px 15px; 
-        font-size: 14px; 
-    } */
-}
+} */
 
   .button-container {
     margin-top: 10px; /* Adjusts the space between the text and the buttons */
