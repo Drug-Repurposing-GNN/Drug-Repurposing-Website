@@ -74,6 +74,11 @@ body, html {
     /* margin: 50px; */
   }
 
+img {
+    max-width: 40%; 
+    width: auto; 
+}
+
 @media {
 /*     .centered-container {
         min-height: 50%;
