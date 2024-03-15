@@ -73,18 +73,18 @@ body, html {
     min-height: 75%;
     /* margin: 50px; */
   }
-
+/* 
 @media {
     .centered-container {
         min-height: 50%;
     }
-/*     #title-div h1 {
+    #title-div h1 {
         font-size: 76px;
     }
     .button-container {
-        font-size: 56px; */
+        font-size: 56px;
   }
-}
+} */
 
   .button-container {
     margin-top: 10px; /* Adjusts the space between the text and the buttons */
