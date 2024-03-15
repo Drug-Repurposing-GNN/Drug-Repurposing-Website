@@ -81,7 +81,7 @@ img {
 
 @media {
     .centered-container {
-        max-height: 30%; 
+        max-height: 20%; 
       }
     img {
         max-width: 100%; 
