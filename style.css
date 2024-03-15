@@ -75,12 +75,12 @@ body, html {
   }
 
 @media (max-width: 768px) {
-    .main-container {
-        padding: 20px; /* Smaller padding for smaller devices */
+    .centered-container {
+        min-height: 35%
         /* Additional styles to decrease size, like reducing font-size, margins, etc. */
     }
     #title-div h1 {
-        font-size: 48px; /* Smaller font size */
+        font-size: 100px;
     }
 /*     .button-container button {
         padding: 10px 15px; 
