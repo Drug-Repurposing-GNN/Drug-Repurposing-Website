@@ -81,17 +81,17 @@ img {
 
 @media {
     .centered-container {
-        max-height: 35%; 
+        max-height: 25%; 
       }
     img {
         max-width: 100%; 
         width: auto; 
     }
-  .method-text {
-      padding: 10px;
+  .overlay-text p {
+    width: 85%; 
   }
-  .overlay-text {
-      padding: 10px;
+  .method-text p {
+    width: 85%; 
   }
 }
 
