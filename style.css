@@ -73,9 +73,9 @@ body, html {
     min-height: 75%;
     /* margin: 50px; */
   }
-/* 
+
 @media {
-    .centered-container {
+/*     .centered-container {
         min-height: 50%;
     }
     #title-div h1 {
@@ -83,8 +83,13 @@ body, html {
     }
     .button-container {
         font-size: 56px;
-  }
-} */
+  } */
+    img {
+        max-width: 100%; 
+        width: auto; 
+    }
+}
+
 
   .button-container {
     margin-top: 10px; /* Adjusts the space between the text and the buttons */
