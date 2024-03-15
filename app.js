@@ -141,6 +141,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var data = [trace1];
     var layout = {
+        width: 700, // or any other size
+        height: 400, // or any other size
         barmode: 'group',
         plot_bgcolor: 'rgba(0,0,0,0)', 
         paper_bgcolor: 'rgba(0,0,0,0)',
@@ -151,9 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
             color: 'black', // Ensures y-axis lines and ticks are black
             gridcolor: 'black', // Ensures y-axis grid lines are black
         } 
-        
       };
-
     Plotly.newPlot('myDiv', data, layout);
 
     var trace2 = {
