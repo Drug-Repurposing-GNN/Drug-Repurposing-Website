@@ -94,8 +94,6 @@ body, html {
 }
 
   .button-container {
-    display: flex;
-    justify-content: space-between; /* This will push the children to opposite ends */
     margin-top: 10px; /* Adjusts the space between the text and the buttons */
     border-radius: 10px;
     /* opacity: 0.8; */
@@ -107,7 +105,9 @@ body, html {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  .front-button-container {
+  .nav-button-container {
+      display: flex;
+    justify-content: space-between; /* This will push the children to opposite ends */
     margin-top: 10px; /* Adjusts the space between the text and the buttons */
     border-radius: 10px;
     /* opacity: 0.8; */
