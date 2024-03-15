@@ -87,6 +87,12 @@ img {
         max-width: 100%; 
         width: auto; 
     }
+  .method-text {
+      padding: 10px;
+  }
+  .overlay-text {
+      padding: 10px;
+  }
 }
 
 
