@@ -94,7 +94,8 @@
         </p>
         
         <img src="Images/scheduler.png" style="width: 40%; height: auto;">
-
+    <div id="resultsText" class="results-text hidden">
+        <div id="resultsBackground"></div>
         <h2>Results:</h2>
         <p>
             Here are the baseline models' performances where TxGNN 130 represents the more capable teacher model and 
@@ -230,6 +231,8 @@
             Our ablation study shows that noise in the teacher model's pseudo labels causes the performance gap between FlyKD and other KD methods. 
             Adding Curriculum Learning to BKD improves its performance noticeably, giving a +1.55% boost over the standard approach.
         </p>
+    <button class="section-nav-button" onclick="switchSection('overviewText', 'overlay-text')">&lt; Overview</button>
+    </div>
 
         <p>
             "Findings and Summary Section?"
