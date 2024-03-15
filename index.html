@@ -65,9 +65,12 @@
         <img src="Images/Labels.png" alt="Model Architecture" style="width: 40%; height: auto;">
         <p>
             The recipe for generating Degree-Aware Random Graph is depicted below: 
+        </p>
+        <p>
             
             "insert Algorithm 2"
-                
+        </p>
+        <p>
             In plain words, GenerateRandomGraph selects two nodes where the probability of a
             node being selected is proportionate to the degree of a node in the original graph (with
             respect to the relation). By doing so, we increase the quality of the pseudo labels on the
@@ -91,7 +94,10 @@
         </p>
 
         <h2>Results:</h2>
-        
+        <p>
+            Here are the baseline models' performances where TxGNN 130 represents the more capable teacher model and 
+            TxGNN 80 represents the lighter student model.
+        </p>
         <table style="width:75%; margin: auto; border-collapse: collapse; border: 1px solid black; margin-bottom: 20px;">
             <caption style="text-align: center; font-weight: bold; margin-bottom: 0.5em;">
                 Baseline AUPRC (%):
@@ -128,12 +134,18 @@
             </tr>
         </table>
         <p>
-            The zero-shot evaluation setting can lead to high variability due to different seeds. 
-            To address this, we focus on the performance gains from each method relative to the baseline, averaged across seeds. 
+            There is a high variance of performance due to zero-shot
+            evaluation setting. Thus, we focus on the relative performance gains at each seed and averaged across seeds. 
             This way, we can more accurately attribute changes in performance to the methods themselves, 
             rather than to fluctuations in task difficulty associated with different seeds.
         </p>
-        
+
+        <p>
+            In our study, we delve into three distinct methods of Knowledge Distillation (KD) for Graph Neural Networks (GNN): 
+            Basic Knowledge Distillation (BKD) as introduced by Hinton, Vinyals, and Dean in 2015, 
+            Local Structure Preserving GCN (LSPGCN, also known as DistillGCN) developed by Yang et al. in 2020, 
+            and our innovative approach, FlyKD.
+        </p>
         <table style="width:75%; margin: auto; border-collapse: collapse; border: 1px solid black; margin-bottom: 20px;">
             <caption style="text-align: center; font-weight: bold; margin-bottom: 0.5em;">
                 Knowledge Distillation Methods (Relative gains from Baseline80)
@@ -169,15 +181,13 @@
                 <td style="border: 1px solid black;">1.16±0.36</td>
             </tr>
         </table>
-        <p>
-            In our study, we delve into three distinct methods of Knowledge Distillation (KD) for Graph Neural Networks (GNN): 
-            Basic Knowledge Distillation (BKD) as introduced by Hinton, Vinyals, and Dean in 2015, 
-            Local Structure Preserving GCN (LSPGCN, also known as DistillGCN) developed by Yang et al. in 2020, 
-            and our innovative approach, FlyKD. Our analysis reveals that while BKD and LSPGCN unfortunately result in diminished KD effects, 
-            FlyKD stands out by achieving positive results compared. However, Curriculum learning was used in FlyKD, whereas it was not used
-            in the other methods.
-        </p>
 
+        <p>
+            Our experiments reveals that while BKD and LSPGCN result in negative KD effects, 
+            FlyKD stands out by achieving positive relative gains. We ind out the reason for such gap in the following
+            ablation study.
+        </p>
+        
         <!-- <div id='myDiv2'></div> -->
         <table style="width:75%; margin-left: auto; margin-right: auto; border-collapse: collapse; border: 1px solid black; margin-bottom: 20px;">
             <caption style="text-align: center; font-weight: bold; margin-bottom: 0.5em;">
@@ -217,6 +227,23 @@
         <p>
             Our ablation study shows that noise in the teacher model's pseudo labels causes the performance gap between FlyKD and other KD methods. 
             Adding Curriculum Learning to BKD improves its performance noticeably, giving a +1.55% boost over the standard approach.
+        </p>
+
+        <p>
+            "Findings and Summary Section?"
+        </p>
+        <h2>Findings</h2>
+        <ul>
+            <li>Optimization process of the student model in KD is inherently noisy, and Curriculum Learning can greatly alleviate this issue.</li>
+            <li>Curriculum Learning for KD requires a gradual change in difficulty, corroborated by catastrophic degradation in performance when a step-wise loss scheduler is employed instead.</li>
+            <li>LSPGCN is not scalable for Knowledge Graphs, as demonstrated by a 10-20x increase in time as shown in Table 2. This holds true for most Knowledge Distillation methods tailored for graphs with similar mechanisms.</li>
+            <li>FlyKD’s pseudo labels on degree-aware random graphs seem to help but do not provide any additional gains beyond the generation of one random graph and maintaining it, instead of generating a new random graph at every epoch throughout the training. Further investigation is needed to understand this phenomenon.</li>
+        </ul>
+        <p>
+            Last Remark:
+            We believe our experimental results suggests a new research direction of how to improve the
+            optimization process of the student model rather than the common what pseudo labels to
+            generate (What to distill).
         </p>
         <button class="section-nav-button" id="toOverviewButton" onclick="switchSection('overviewText', 'overlay-text')">&lt; Overview</button>
     </div>
