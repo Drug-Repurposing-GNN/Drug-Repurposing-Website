@@ -76,12 +76,15 @@ body, html {
 
 @media (max-width: 768px) {
     .centered-container {
-        min-height: 35%
+        min-height: 35%;
         /* Additional styles to decrease size, like reducing font-size, margins, etc. */
     }
     #title-div h1 {
         font-size: 100px;
     }
+    .button-container {
+        font-size: 76px;
+  }
 /*     .button-container button {
         padding: 10px 15px; 
         font-size: 14px; 
