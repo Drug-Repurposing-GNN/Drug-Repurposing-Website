@@ -94,6 +94,7 @@ body, html {
 }
 
   .button-container {
+    position: relative; /* Make this a positioned container */
     margin-top: 10px; /* Adjusts the space between the text and the buttons */
     border-radius: 10px;
     /* opacity: 0.8; */
@@ -103,7 +104,6 @@ body, html {
     padding-right: 0;
     margin: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
   }
 
   #title-div {
@@ -366,15 +366,30 @@ body, html {
     transition: text-decoration 0.3s ease;
 }
 
-#toMethodsButton {
-    right: 20px; /* This will position the button on the bottom right */
+/* #toMethodsButton {
+    right: 20px; 
     font-size: 34px;
 }
 
 #toOverviewButton {
-    left: 20px; /* This will position the button on the bottom left */
+    left: 20px; 
+    font-size: 34px;
+} */
+
+#toMethodsButton, #toOverviewButton {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
     font-size: 34px;
 }
+
+#toMethodsButton {
+    right: 10px; /* Adjust as needed for spacing from the right edge */
+}
+
+#toOverviewButton {
+    left: 10px; /* Adjust as needed for spacing from the left edge */
+}
+
 
 .section-nav-button:hover {
     text-decoration: underline;
