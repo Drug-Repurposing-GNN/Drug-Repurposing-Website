@@ -382,21 +382,6 @@ img {
     transition: text-decoration 0.3s ease;
 }
 
-.note-container {
-    background-color: #f0f8ff; /* Light blue background */
-    padding: 15px;            /* Padding around the text */
-    border-radius: 8px;       /* Rounded corners */
-    margin: 20px 0;           /* Margin above and below the container */
-    text-align: center;       /* Center the text */
-}
-
-.note-container p {
-    font-size: 1.5em;         /* Increase the font size */
-    font-weight: bold;        /* Make the text bold */
-    color: #333;              /* Darker text color for contrast */
-    margin: 0;                /* Remove default paragraph margins */
-}
-
 /* #toMethodsButton {
     right: 20px; 
     font-size: 34px;
